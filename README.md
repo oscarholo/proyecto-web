@@ -23,7 +23,6 @@ El objetivo de este proyecto es integrar y aplicar conocimientos adquiridos a lo
 - **Backend**: Django (Python)
 - **Base de datos**: PostgreSQL o MySQL
 - **Servidor web**: Apache o Nginx (según entorno de despliegue)
-- **Sistema operativo**: Linux (preferiblemente Ubuntu Server)
 - **Control de versiones**: Git + GitHub
 
 ---
