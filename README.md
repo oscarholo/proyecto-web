@@ -7,7 +7,7 @@ Este repositorio contiene el desarrollo de mi aplicación web realizada con **Dj
 El objetivo de este proyecto es integrar y aplicar conocimientos adquiridos a lo largo del ciclo, incluyendo:
 
 - Desarrollo web con Django (Python).
-- Gestión de bases de datos con PostgreSQL o MySQL.
+- Gestión de bases de datos.
 - Seguridad en aplicaciones web.
 - Administración de entornos y servidores.
 - Despliegue de aplicaciones en entornos reales o virtualizados.
