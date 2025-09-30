@@ -19,12 +19,6 @@ El objetivo de este proyecto es integrar y aplicar conocimientos adquiridos a lo
 
 ## Tecnologías previstas
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Django (Python)
-- **Base de datos**: PostgreSQL o MySQL
-- **Servidor web**: Apache o Nginx (según entorno de despliegue)
-- **Control de versiones**: Git + GitHub
-
 ---
 
 ##  Estructura inicial del proyecto
