@@ -28,6 +28,6 @@ El objetivo de este proyecto es integrar y aplicar conocimientos adquiridos a lo
 
 ---
 
-## 📦 Estructura inicial del proyecto
+##  Estructura inicial del proyecto
 
 ```bash
