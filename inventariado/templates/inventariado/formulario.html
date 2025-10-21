@@ -1,0 +1,56 @@
+{% extends 'inventariado/base.html' %}
+
+{% block title %}{{ titulo }}{% endblock %}
+
+{% block content %}
+<h2>{{ titulo }}</h2>
+
+<form method="post" style="max-width: 600px;">
+    {% csrf_token %}
+    
+    {% for field in form %}
+    <div style="margin-bottom: 15px;">
+        <label style="display: block; margin-bottom: 5px; font-weight: bold;">
+            {{ field.label }}
+        </label>
+        {{ field }}
+        {% if field.help_text %}
+        <small style="color: #666; display: block; margin-top: 5px;">{{ field.help_text }}</small>
+        {% endif %}
+        {% if field.errors %}
+        <div style="color: red; font-size: 14px; margin-top: 5px;">
+            {{ field.errors }}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+    
+    <div style="margin-top: 20px;">
+        <button type="submit" style="background: #27ae60; color: white; padding: 10px 20px; 
+               border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">
+            Guardar
+        </button>
+        <a href="{% url url_volver %}" style="color: #666; text-decoration: none;">
+            Cancelar
+        </a>
+    </div>
+</form>
+
+<style>
+    /* Mejora la apariencia de los campos del formulario */
+    input, select, textarea {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+        border-color: #3498db;
+        outline: none;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+    }
+</style>
+{% endblock %}

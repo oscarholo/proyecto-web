@@ -1,0 +1,65 @@
+{% extends 'inventariado/base.html' %}
+
+{% block title %}Dispositivos - Sistema de Inventariado{% endblock %}
+
+{% block content %}
+<h2>💻 Lista de Dispositivos</h2>
+
+{% if dispositivos %}
+    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+            <tr style="background-color: #34495e; color: white;">
+                <th style="padding: 12px; text-align: left;">Nombre</th>
+                <th style="padding: 12px; text-align: left;">Tipo</th>
+                <th style="padding: 12px; text-align: left;">Marca</th>
+                <th style="padding: 12px; text-align: left;">N° Serie</th>
+                <th style="padding: 12px; text-align: left;">Estado</th>
+                <th style="padding: 12px; text-align: left;">Ubicación</th>
+                <th style="padding: 12px; text-align: center;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dispositivo in dispositivos %}
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 12px;">{{ dispositivo.nombre }}</td>
+                <td style="padding: 12px;">{{ dispositivo.tipo }}</td>
+                <td style="padding: 12px;">{{ dispositivo.marca|default:"-" }}</td>
+                <td style="padding: 12px;">{{ dispositivo.n_serie }}</td>
+                <td style="padding: 12px;">
+                    <span style="padding: 4px 8px; border-radius: 3px; 
+                        {% if dispositivo.estado == 'Funcional' %}background: #d4edda; color: #155724;{% endif %}
+                        {% if dispositivo.estado == 'Averiado' %}background: #f8d7da; color: #721c24;{% endif %}
+                        {% if dispositivo.estado == 'Obsoleto' %}background: #fff3cd; color: #856404;{% endif %}">
+                        {{ dispositivo.estado }}
+                    </span>
+                </td>
+                <td style="padding: 12px;">{{ dispositivo.id_ubi|default:"Sin ubicación" }}</td>
+                <td style="padding: 12px; text-align: center;">
+                    <a href="{% url 'eliminar_dispositivo' dispositivo.id_dis %}" 
+                       style="color: #e74c3c; text-decoration: none; font-weight: bold;"
+                       onclick="return confirm('¿Estás seguro de eliminar este dispositivo?')">
+                        🗑️ Eliminar
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No hay dispositivos registrados en el sistema.</p>
+    <p>Puedes agregar dispositivos desde el <a href="/admin/">panel de administración</a>.</p>
+{% endif %}
+
+<div style="margin-top: 20px;">
+    <a href="{% url 'agregar_dispositivo' %}" 
+       style="background: #27ae60; color: white; padding: 10px 15px; 
+              text-decoration: none; border-radius: 4px; display: inline-block; margin-right: 10px;">
+        ➕ Agregar Nuevo Dispositivo
+    </a>
+    <a href="{% url 'index' %}" 
+       style="background: #3498db; color: white; padding: 10px 15px; 
+              text-decoration: none; border-radius: 4px; display: inline-block;">
+        🏠 Volver al Inicio
+    </a>
+</div>
+{% endblock %}
