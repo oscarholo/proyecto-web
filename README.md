@@ -13,4 +13,4 @@ Mi objetivo con esta aplicacion es modernizar y agilizar el proceso, facilitando
 - Desarrollo web con Django (Python).
 - Gestión de bases de datos.
 - Despliegue de aplicaciones en entornos reales o virtualizados.
-- Uso profesional de control de versiones con Git y GitHub.
+- Uso profesional de control de versiones con Git y GitHub
