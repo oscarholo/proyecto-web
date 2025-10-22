@@ -6,7 +6,7 @@ class UbicacionForm(forms.ModelForm):
         model = Ubicaciones
         fields = ['nombre', 'descripcion']
         widgets = {
-            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ej: Oficina Central'}),
+            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ej: Aula 117'}),
             'descripcion': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': 'Descripción de la ubicación'}),
         }
 
@@ -15,7 +15,7 @@ class DispositivoForm(forms.ModelForm):
         model = Dispositivos
         fields = ['nombre', 'tipo', 'marca', 'modelo', 'n_serie', 'estado', 'id_ubi']
         widgets = {
-            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ej: PC Oficina 1'}),
+            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ej: Portatil Jaime'}),
             'tipo': forms.Select(attrs={'class': 'form-control'}),
             'marca': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ej: Dell, HP'}),
             'modelo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ej: Optiplex 7070'}),
@@ -31,5 +31,5 @@ class TrasladoForm(forms.ModelForm):
         widgets = {
             'id_dis': forms.Select(attrs={'class': 'form-control'}),
             'id_ubi': forms.Select(attrs={'class': 'form-control'}),
-            'responsable': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Persona responsable del traslado'}),
+            'responsable': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre'}),
         }
