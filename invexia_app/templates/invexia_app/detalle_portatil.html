@@ -1,0 +1,11 @@
+<h1>Detalle del Portátil: {{ portatil.nombre }}</h1>
+<p><strong>Marca:</strong> {{ portatil.marca }}</p>
+<p><strong>Modelo:</strong> {{ portatil.modelo }}</p>
+<p><strong>Procesador:</strong> {{ portatil.procesador }}</p>
+<p><strong>RAM:</strong> {{ portatil.ram }}</p>
+<p><strong>Almacenamiento:</strong> {{ portatil.almacenamiento }}</p>
+<p><strong>Pantalla:</strong> {{ portatil.pantalla }}</p>
+<p><strong>Sistema operativo:</strong> {{ portatil.get_sistema_operativo_display }}</p>
+<p><strong>Estado:</strong> {{ portatil.estado }}</p>
+<p><strong>Observaciones:</strong> {{ portatil.observaciones }}</p>
+<p><a href="{% url 'lista_portatiles' %}">Volver a la lista</a></p>

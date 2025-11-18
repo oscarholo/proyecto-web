@@ -1,0 +1,9 @@
+<h2>Reservar portátil: {{ portatil.nombre }}</h2>
+<p>Marca: {{ portatil.marca }}, RAM: {{ portatil.ram }}, SO: {{ portatil.sistema_operativo }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Reservar</button>
+</form>
+
+<a href="{% url 'lista_portatiles' %}">Volver a la lista</a>

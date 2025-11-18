@@ -1,0 +1,23 @@
+<h1>Invexia - Portátiles</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Acción</th>
+    </tr>
+    {% for p in portatiles %}
+    <tr>
+        <td>{{ p.id }}</td>
+        <td><a href="{% url 'detalle_portatil' id=p.id %}">{{ p.nombre }}</a></td>
+        <td>{{ p.estado }}</td>
+        <td>
+            {% if p.estado == 'DISPONIBLE' %}
+                <a href="{% url 'reservar_portatil' id=p.id %}">Reservar</a>
+            {% else %}
+                En uso
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
